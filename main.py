@@ -45,10 +45,10 @@ async def onMessages(request: Request):
 
     body = await request.json()
     text = body['text']
-    fromNumber = body['from']
+    calleeNumber = body['from']
 
     message = SMSMessage()
-    message.to = fromNumber
+    message.to = calleeNumber
     message.from_ = vonageContact.number
     message.channel = vonageContact.type_
     message.message_type = 'text'
